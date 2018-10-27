@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TheVergeTopNews</string>
+    <string name="dataisloading">Data is Loading ...</string>
+
 </resources>

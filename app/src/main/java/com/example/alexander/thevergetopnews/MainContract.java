@@ -1,29 +1,18 @@
 package com.example.alexander.thevergetopnews;
 
-import com.example.alexander.thevergetopnews.Model.News;
+import com.example.alexander.thevergetopnews.Model.dto.News;
 
 public interface MainContract {
 
     interface View {
-
         void showList(News news);
-
-
-
+        void showMessage(String s);
     }
 
     interface Presenter {
+        void getData();
+        void refresh();
+        void subscribe(View view);
+        void unSubscribe();
     }
-
-    interface Repository {
-
-       public void   getNews(OnFinishedListener onFinishedListener);
-
-       interface OnFinishedListener {
-           void onFinished(News news);
-           void onFailure(Throwable t);
-       }
-
-    }
-
 }

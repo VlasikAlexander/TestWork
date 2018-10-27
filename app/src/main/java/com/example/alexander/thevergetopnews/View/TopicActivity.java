@@ -1,16 +1,14 @@
-package com.example.alexander.thevergetopnews;
+package com.example.alexander.thevergetopnews.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 
-import com.example.alexander.thevergetopnews.View.RecyclerViewAdapter;
+import com.example.alexander.thevergetopnews.R;
 
-public class Main2Activity extends AppCompatActivity {
-
+public class TopicActivity extends AppCompatActivity {
 
 
     @Override
