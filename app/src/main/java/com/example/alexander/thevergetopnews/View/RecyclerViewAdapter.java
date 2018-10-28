@@ -53,6 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         Glide.with(mContext).load(article.getUrlToImage()).apply(createGlideOptions()).into(holder.mImageView);
 
+        // set it in holder's constructor
         holder.itemView.setOnClickListener(new View.OnClickListener() {
 
 
@@ -72,6 +73,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return articles.size();
     }
 
+    // why it's public?
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView name, rarity, cardset, text;
         private ImageView mImageView;

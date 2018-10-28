@@ -7,7 +7,7 @@ import com.example.alexander.thevergetopnews.Model.MainRepository;
 import com.example.alexander.thevergetopnews.Model.dto.News;
 import com.example.alexander.thevergetopnews.Model.RepositoryListener;
 
-
+// if view is null-able, where are null checks?
 public class MainPresenter implements MainContract.Presenter {
 
     private MainContract.View mView;
@@ -26,7 +26,7 @@ public class MainPresenter implements MainContract.Presenter {
     @Override
     public void getData() {
         if(dataStore == null || (!isCurrentDataActual())){
-            mView.showMessage("Data is loading");
+            mView.showMessage("Data is loading"); // use resources
             mRepository.getNews(mRepositoryCallback);
             return;
         }
@@ -36,11 +36,11 @@ public class MainPresenter implements MainContract.Presenter {
     @Override
     public void refresh() {
         if(dataStore == null || (!isCurrentDataActual())){
-            mView.showMessage("Data is loading");
+            mView.showMessage("Data is loading"); // use resources
             mRepository.getNews(mRepositoryCallback);
             return;
         }
-        mView.showMessage("No data to update");
+        mView.showMessage("No data to update"); // use resources
     }
 
     @Override
@@ -65,7 +65,7 @@ public class MainPresenter implements MainContract.Presenter {
 
            @Override
            public void onFailure(Throwable t) {
-               mView.showMessage("Error loading");
+               mView.showMessage("Error loading"); // use resources
            }
        };
     }

@@ -1,6 +1,6 @@
 package com.example.alexander.thevergetopnews.Model.dto;
 
-
+// clean imports
 import com.example.alexander.thevergetopnews.Model.dto.Source;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
