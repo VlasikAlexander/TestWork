@@ -10,7 +10,7 @@ import retrofit2.Response;
 
 public class MainRepository {
     private News news;
-
+    // is listener null-able?
     public void getNews(final RepositoryListener onFinishedListener) {
 
         Call<News> newsCall = ApiClient.getInstance().getService().getHeadliners();
