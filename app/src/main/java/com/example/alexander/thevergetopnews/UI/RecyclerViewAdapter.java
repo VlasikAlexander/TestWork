@@ -1,7 +1,8 @@
-package com.example.alexander.thevergetopnews.View;
+package com.example.alexander.thevergetopnews.UI;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +12,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.alexander.thevergetopnews.Model.dto.Article;
+import com.example.alexander.thevergetopnews.Components.dto.Article;
 import com.example.alexander.thevergetopnews.R;
+import com.example.alexander.thevergetopnews.UI.Activities.TopicActivity;
 
 import java.util.List;
 
@@ -28,7 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         mContext = context;
     }
 
-    public RequestOptions createGlideOptions() {
+    private RequestOptions createGlideOptions() {
         if (options == null)
             options = new RequestOptions()
                     .centerCrop()
@@ -37,18 +39,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return options;
     }
 
+    @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item, parent, false );
         return new MyViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         final Article article = articles.get(position);
-        holder.name.setText(article.getTitle());
+        holder.name.setText(position + 1 + ". " + article.getTitle());
         holder.text.setText(article.getSource().getName());
-
 
 
         Glide.with(mContext).load(article.getUrlToImage()).apply(createGlideOptions()).into(holder.mImageView);
@@ -72,11 +74,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return articles.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView name, rarity, cardset, text;
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView name, text;
         private ImageView mImageView;
 
-        public MyViewHolder(View itemView) {
+        MyViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.title);
             text = itemView.findViewById(R.id.article_text);

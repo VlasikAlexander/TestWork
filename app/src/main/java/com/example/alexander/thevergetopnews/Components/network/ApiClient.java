@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.Model.network;
+package com.example.alexander.thevergetopnews.Components.network;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,10 +9,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
 
-public static final String BASE_URL = "https://newsapi.org/v2/";
+private static final String BASE_URL = "https://newsapi.org/v2/";
     private Retrofit retrofit;
     private IApiInterface service;
-    public static ApiClient instance;
+    private static ApiClient instance;
 
     private ApiClient() {
 

@@ -1,7 +1,6 @@
-package com.example.alexander.thevergetopnews.Model.dto;
+package com.example.alexander.thevergetopnews.Components.dto;
 
 
-import com.example.alexander.thevergetopnews.Model.dto.Source;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

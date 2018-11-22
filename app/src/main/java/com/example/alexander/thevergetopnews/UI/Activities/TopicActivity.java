@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.View;
+package com.example.alexander.thevergetopnews.UI.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.alexander.thevergetopnews.R;
+import com.example.alexander.thevergetopnews.UI.RecyclerViewAdapter;
 
 public class TopicActivity extends AppCompatActivity {
 

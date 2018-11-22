@@ -5,11 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="1dp"
-    android:layout_marginLeft="1dp"
-    android:layout_marginEnd="1dp"
-    android:layout_marginRight="1dp"
-    android:layout_marginBottom="1dp">
+    android:elevation="0dp">
 
 
     <android.support.constraint.ConstraintLayout
@@ -22,17 +18,17 @@
 
         <ImageView
             android:id="@+id/image_article"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars[0]" />
+            android:contentDescription="@string/desc"
+            />
 
         <TextView
             android:id="@+id/title"
@@ -42,7 +38,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="text"
             android:textAlignment="viewStart"
             android:textColor="@android:color/black"
             android:textSize="16sp"
@@ -59,7 +54,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="TextView"
             android:textSize="12sp"
             android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/image_article"
@@ -73,6 +67,18 @@
             android:orientation="vertical"
             app:layout_constraintGuide_begin="272dp"
             app:layout_constraintGuide_percent="0.8" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/desc"
+            app:srcCompat="@drawable/line" />
     </android.support.constraint.ConstraintLayout>
 
 </android.support.v7.widget.CardView>
